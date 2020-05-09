@@ -1,7 +1,7 @@
 const graphql = require('graphql');
 
 const MovieType = require('./type/MovieType');
-const DirectorsType = require('./type/DirectorsType');
+const DirectorsType = require('./type/DirectorType');
 
 const movies = require('../../fackeData/fakeMovie');
 const directors = require('../../fackeData/fakeDirectors');
