@@ -1,15 +1,8 @@
 const graphql = require('graphql');
+const MovieType = require('./type/MovieType');
+const movies = require('../../fackeData/fakeMovie');
 
-const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID } = graphql;
-
-const MovieType = new GraphQLObjectType({
-    name: 'Movie',
-    fields: () => ({
-        id: { type: GraphQLID },
-        title: { type: GraphQLString },
-        genre: { type: GraphQLString },
-    }),
-});
+const { GraphQLObjectType, GraphQLSchema, GraphQLID } = graphql;
 
 const Query = new GraphQLObjectType({
     name: 'Query',

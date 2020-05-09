@@ -1,6 +1,6 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
-const movieSchema = require('./schemas/movieSchema');
+const movieSchema = require('./schemas/movie/movieSchema');
 
 const app = express();
 const PORT = 3000;
