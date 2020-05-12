@@ -5,6 +5,7 @@ import { inject, observer } from 'mobx-react';
 import ROUTES from './constant/routes';
 import storesName from './constant/storesName';
 import createBrowserHistory from 'history/createBrowserHistory';
+import HeaderContainer from './container/header/HeaderContainer';
 import App from './App';
 
 @inject(storesName.ROUTER)
@@ -16,6 +17,7 @@ class Routes extends React.Component {
     render() {
         return (
             <Router history={this.history}>
+                <HeaderContainer />
                 <Switch>
                     <Route path={ROUTES.HOME} component={App} />
                     <Redirect to={ROUTES.HOME} from="*"/>
