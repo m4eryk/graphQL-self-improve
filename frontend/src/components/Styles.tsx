@@ -1,33 +1,40 @@
-const headerStyle = theme => ({
+import { createStyles, Theme } from "@material-ui/core";
+
+const headerStyle = ({
+ palette,
+ breakpoints,
+ spacing,
+ shape,
+ transitions}: Theme) => createStyles({
     root: {
         flexGrow: 1,
     },
     menuButton: {
-        marginRight: theme.spacing(2),
+        marginRight: spacing(2),
     },
     title: {
         flexGrow: 1,
         display: 'none',
-        [theme.breakpoints.up('sm')]: {
+        [breakpoints.up('sm')]: {
             display: 'block',
         },
     },
     search: {
         position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: theme.palette.common.white,
+        borderRadius: shape.borderRadius,
+        backgroundColor: palette.common.white,
         '&:hover': {
-            backgroundColor: theme.palette.common.white,
+            backgroundColor: palette.common.white,
         },
         marginLeft: 0,
         width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing(1),
+        [breakpoints.up('sm')]: {
+            marginLeft: spacing(1),
             width: 'auto',
         },
     },
     searchIcon: {
-        padding: theme.spacing(0, 2),
+        padding: spacing(0, 2),
         height: '100%',
         position: 'absolute',
         pointerEvents: 'none',
@@ -40,11 +47,11 @@ const headerStyle = theme => ({
         color: 'inherit',
     },
     inputInput: {
-        padding: theme.spacing(1, 1, 1, 0),
-        paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-        transition: theme.transitions.create('width'),
+        padding: spacing(1, 1, 1, 0),
+        paddingLeft: `calc(1em + ${spacing(4)}px)`,
+        transition: transitions.create('width'),
         width: '100%',
-        [theme.breakpoints.up('sm')]: {
+        [breakpoints.up('sm')]: {
             width: '12ch',
             '&:focus': {
                 width: '20ch',

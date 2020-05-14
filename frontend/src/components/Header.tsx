@@ -6,8 +6,11 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import { WithStyles } from "@material-ui/core";
 
-class Header extends React.Component {
+interface Props extends WithStyles {}
+
+class Header extends React.Component<Props> {
 
     render() {
         const { classes } = this.props;
