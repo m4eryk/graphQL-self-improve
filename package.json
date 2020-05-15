@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/app.js"
+    "start": "nodemon server/app.js",
+    "start-fe": "cd frontend && npm start"
   },
   "author": "alexander.mayorov@intexsoft.com",
   "license": "ISC",

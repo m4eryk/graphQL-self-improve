@@ -15,7 +15,8 @@ const MovieType = new GraphQLObjectType({
             resolve(parent, args) {
                 return Directors.findById(parent.directorId);
             }
-        }
+        },
+        img: { type: GraphQLString }
     }),
 });
 

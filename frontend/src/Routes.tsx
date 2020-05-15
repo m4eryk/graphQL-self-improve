@@ -4,7 +4,7 @@ import { Redirect, Route, Router, Switch } from 'react-router';
 import { inject, observer } from 'mobx-react';
 import storesName from './constant/storesName';
 import ROUTES from './constant/routes';
-import HeaderContainer from './container/header/HeaderContainer';
+import Library from './containers/Library';
 import App from './App';
 
 
@@ -21,9 +21,9 @@ class Routes extends React.Component<Props> {
 
         return (
             <Router history={history}>
-                <HeaderContainer/>
                 <Switch>
-                    <Route path={ROUTES.HOME} component={App}/>
+                    <Route exact path={ROUTES.LIBRARY} component={Library} />
+                    <Route path={ROUTES.HOME} component={App} />
                     <Redirect to={ROUTES.HOME} from="*"/>
                 </Switch>
             </Router>

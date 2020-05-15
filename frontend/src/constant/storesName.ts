@@ -1,5 +1,6 @@
 const storesName = {
-    ROUTER: 'routingStore',
+    ROUTER: 'routerStore',
+    LIBRARY: 'libraryStore',
 };
 
 export default storesName;

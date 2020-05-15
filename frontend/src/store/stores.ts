@@ -1,5 +1,7 @@
 import { RouterStore } from 'mobx-react-router';
+import { LibraryStore } from './libraryStore';
 
 export default class Stores {
-    routingStore = new RouterStore();
+    routerStore = new RouterStore();
+    libraryStore = new LibraryStore();
 }
