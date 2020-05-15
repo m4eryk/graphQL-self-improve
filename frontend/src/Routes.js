@@ -1,11 +1,11 @@
 import React from 'react';
 import { Redirect, Route, Router, Switch } from 'react-router';
-import { syncHistoryWithStore } from './utils/syncHistoryWithStore';
 import { inject, observer } from 'mobx-react';
+import { createBrowserHistory } from 'history';
+import { syncHistoryWithStore } from './utils/syncHistoryWithStore';
 import ROUTES from './constant/routes';
 import storesName from './constant/storesName';
-import createBrowserHistory from 'history/createBrowserHistory';
-import HeaderContainer from './container/header/HeaderContainer';
+import Library from './containers/Library';
 import App from './App';
 
 @inject(storesName.ROUTER)
@@ -17,8 +17,8 @@ class Routes extends React.Component {
     render() {
         return (
             <Router history={this.history}>
-                <HeaderContainer />
                 <Switch>
+                    <Route exact path={ROUTES.LIBRARY} component={Library} />
                     <Route path={ROUTES.HOME} component={App} />
                     <Redirect to={ROUTES.HOME} from="*"/>
                 </Switch>

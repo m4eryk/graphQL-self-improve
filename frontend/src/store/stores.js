@@ -1,5 +1,7 @@
 import { RouterStore } from './routerStore';
+import { LibraryStore } from './libraryStore';
 
 export default class Stores {
-    routingStore = new RouterStore();
+    routerStore = new RouterStore();
+    libraryStore = new LibraryStore();
 }

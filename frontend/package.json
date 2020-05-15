@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.5",
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -14,6 +15,7 @@
     "graphql": "^15.0.0",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
+    "mobx-state-tree": "^3.16.0",
     "react": "^16.13.1",
     "react-apollo": "^3.1.5",
     "react-app-rewired": "^2.1.6",

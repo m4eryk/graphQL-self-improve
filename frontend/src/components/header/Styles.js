@@ -2,6 +2,9 @@ const headerStyle = theme => ({
     root: {
         flexGrow: 1,
     },
+    bar: {
+        backgroundColor: '#292b3c',
+    },
     menuButton: {
         marginRight: theme.spacing(2),
     },
