@@ -1,24 +1,28 @@
 import React from 'react';
+import { SynchronizedHistory } from 'mobx-react-router';
 import { Redirect, Route, Router, Switch } from 'react-router';
-import { syncHistoryWithStore } from './utils/syncHistoryWithStore';
 import { inject, observer } from 'mobx-react';
-import ROUTES from './constant/routes';
 import storesName from './constant/storesName';
-import createBrowserHistory from 'history/createBrowserHistory';
-import HeaderContainer from './container/header/HeaderContainer';
+import ROUTES from './constant/routes';
+import Library from './containers/Library';
 import App from './App';
+
+
+interface Props {
+    history: SynchronizedHistory,
+}
 
 @inject(storesName.ROUTER)
 @observer
-class Routes extends React.Component {
-    browserHistory = createBrowserHistory();
-    history = syncHistoryWithStore(this.browserHistory, this.props[storesName.ROUTER]);
+class Routes extends React.Component<Props> {
 
     render() {
+        const { history } = this.props;
+
         return (
-            <Router history={this.history}>
-                <HeaderContainer />
+            <Router history={history}>
                 <Switch>
+                    <Route exact path={ROUTES.LIBRARY} component={Library} />
                     <Route path={ROUTES.HOME} component={App} />
                     <Redirect to={ROUTES.HOME} from="*"/>
                 </Switch>
