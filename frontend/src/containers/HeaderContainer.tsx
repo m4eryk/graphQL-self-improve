@@ -12,7 +12,7 @@ import headerStyle from '../components/header/Styles';
 interface HeaderProps extends WithStyles {
 }
 
-const Header: React.FC<HeaderProps> = ({ classes }) => {
+const HeaderContainer: React.FC<HeaderProps> = ({ classes }) => {
   const {
     root,
     bar,
@@ -62,5 +62,5 @@ const Header: React.FC<HeaderProps> = ({ classes }) => {
   );
 };
 
-export default withStyles(headerStyle)(Header);
+export default withStyles(headerStyle)(HeaderContainer);
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
-import Store from './Store';
+import App from './App';
 
 export const apolloClient = new ApolloClient({
     uri: 'http://localhost:3005/graphql'
@@ -10,7 +10,7 @@ export const apolloClient = new ApolloClient({
 
 ReactDOM.render(
     <ApolloProvider client={apolloClient}>
-        <Store />
+        <App />
     </ApolloProvider>,
     document.getElementById('root')
 );

@@ -1,23 +1,23 @@
 import React from 'react';
-import { inject } from 'mobx-react';
-import storesName from './constant/storesName';
-import ROUTES from './constant/routes';
+import { Provider } from 'mobx-react';
+import { store} from './store/store';
+import { history } from './store/routerStore';
+import Routes from './Routes';
+import HeaderContainer from './containers/HeaderContainer';
 import './App.css';
 
-@inject(storesName.ROUTER)
 class App extends React.Component {
-  redirectToLibrary = () => {
-    this.props.routerStore.push(ROUTES.LIBRARY);
-  };
 
-  render() {
-    return (
-      <div className="App">
-        hello
-        <div onClick={this.redirectToLibrary}>Go To Library</div>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <Provider {...store}>
+                    <HeaderContainer />
+                    <Routes history={history} />
+                </Provider>
+            </div>
+        );
+    }
 }
 
 export default App;

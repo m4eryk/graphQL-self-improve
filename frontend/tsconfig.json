@@ -18,6 +18,7 @@
     "noEmit": true,
     "allowJs": true,
     "skipLibCheck": true,
+    "downlevelIteration": true,
     "esModuleInterop": true
   },
   "exclude": [
